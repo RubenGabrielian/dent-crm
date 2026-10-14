@@ -28,7 +28,10 @@ export default function DoctorCabinet() {
     set((st) => {
       const stock = { ...st.stock };
       used.forEach((k) => { stock[k] = Math.max(0, stock[k] - st.dcMat[k]); });
-      return { stock, dcMat: {}, dcNotes: '', dcActive: null, appts: st.appts.map((a) => (a.id === curRaw.id ? { ...a, status: 'done' } : a)) };
+      const d = new Date();
+      const time = 'այսօր ' + String(d.getHours()).padStart(2, '0') + ':' + String(d.getMinutes()).padStart(2, '0');
+      const newMoves = used.map((k, n) => ({ id: 'mv' + (st.moveId + n), kind: 'out', itemId: k, qty: st.dcMat[k], cab: D.cab, by: D.short, time, note: curRaw.patient }));
+      return { stock, moves: [...newMoves, ...st.moves], moveId: st.moveId + used.length, dcMat: {}, dcNotes: '', dcActive: null, appts: st.appts.map((a) => (a.id === curRaw.id ? { ...a, status: 'done' } : a)) };
     });
     notify('appt', 'Այցն ավարտված է՝ ' + curRaw.patient, `${D.short} · ${used.length ? used.length + ' անուն նյութ դուրս է գրվել պահեստից' : 'Նյութեր չեն օգտագործվել'}`);
     used.forEach((k) => {

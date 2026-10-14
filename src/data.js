@@ -126,3 +126,13 @@ export const INITIAL_LEAVES = [
         { id: 'l2', name: 'Կարեն Աբրահամյան', kind: 'Մասնագիտական կոնֆերանս', dates: '2–3 նոյեմբեր · 2 օր', st: 'pend' },
         { id: 'l3', name: 'Մերի Ասատրյան', kind: 'Հիվանդության արձակուրդ', dates: '29–30 սեպտեմբեր', st: 'ok' }
 ];
+
+// Stock movements journal. kind: 'out' (issued to a cabinet) | 'in' (received).
+export const INITIAL_MOVES = [
+  { id: 'm1', kind: 'out', itemId: 'i2', qty: 2, cab: 2, by: 'Նունե Զաքարյան', time: 'այսօր 10:12', note: '' },
+  { id: 'm2', kind: 'out', itemId: 'i6', qty: 1, cab: 3, by: 'Նունե Զաքարյան', time: 'այսօր 10:05', note: '' },
+  { id: 'm3', kind: 'out', itemId: 'i1', qty: 4, cab: 4, by: 'Նունե Զաքարյան', time: 'այսօր 09:58', note: '' },
+  { id: 'm4', kind: 'in', itemId: 'i5', qty: 20, cab: null, by: 'Տաթևիկ Ներսիսյան', time: 'երեկ 16:30', note: '' },
+  { id: 'm5', kind: 'in', itemId: 'i8', qty: 6, cab: null, by: 'Տաթևիկ Ներսիսյան', time: 'երեկ 12:10', note: '' },
+  { id: 'm6', kind: 'out', itemId: 'i4', qty: 3, cab: 1, by: 'Նունե Զաքարյան', time: 'երեկ 09:15', note: '' },
+];

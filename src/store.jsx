@@ -1,5 +1,5 @@
 import { createContext, useCallback, useContext, useMemo, useState } from 'react';
-import { INITIAL_APPTS, INITIAL_LEAVES, INITIAL_NOTIFS, ITEMS } from './data.js';
+import { INITIAL_APPTS, INITIAL_LEAVES, INITIAL_MOVES, INITIAL_NOTIFS, ITEMS } from './data.js';
 
 const StoreContext = createContext(null);
 
@@ -19,6 +19,8 @@ const initialState = () => ({
   tool: 'c',
   whFilter: 'all',
   whQuery: '',
+  moves: INITIAL_MOVES,
+  moveId: 1,
   notifs: INITIAL_NOTIFS,
   nFilter: 'all',
   nid: 100,
