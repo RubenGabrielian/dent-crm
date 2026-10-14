@@ -1,0 +1,47 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: 'Noto Sans Armenian', system-ui, sans-serif;
+  --font-serif: 'Noto Serif Armenian', Georgia, serif;
+
+  --color-brand: #0E7C74;
+  --color-brand-dark: #0B5F59;
+  --color-brand-tint: #DCF0EC;
+  --color-ink: #142321;
+  --color-ink2: #3E4B48;
+  --color-muted: #55625F;
+  --color-line: #DDE3DF;
+  --color-line2: #EEF1EF;
+  --color-canvas: #F3F5F2;
+  --color-soft: #F4F7F5;
+  --color-side: #10302C;
+  --color-side-active: #1E4A44;
+  --color-side-hover: #1A433E;
+  --color-side-text: #C4D9D4;
+  --color-side-muted: #9FC0B9;
+  --color-side-line: #23504A;
+  --color-accent: #E8875A;
+  --color-danger: #B3261E;
+  --color-danger-fg: #9A241C;
+  --color-danger-bg: #F7E0DE;
+  --color-ok-fg: #1F6B45;
+  --color-ok-bg: #DCEFE6;
+  --color-warn-fg: #8A4513;
+  --color-warn-bg: #FBEBD9;
+}
+
+body {
+  margin: 0;
+  background: var(--color-canvas);
+  color: var(--color-ink);
+  font-family: var(--font-sans);
+  font-size: 14px;
+  line-height: 1.45;
+}
+
+button { cursor: pointer; }
+button:focus-visible, input:focus-visible, select:focus-visible, textarea:focus-visible {
+  outline: 2px solid var(--color-brand);
+  outline-offset: 2px;
+}
+.tnum { font-variant-numeric: tabular-nums; }
